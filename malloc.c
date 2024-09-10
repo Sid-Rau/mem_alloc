@@ -7,17 +7,14 @@
 #define CHUNK_SIZE sizeof(chunk)
 chunk* chunkListHead = NULL;
 /* The purpose of this project is to implement my own version of malloc, realloc, calloc,
- * and free based on a tutorial by danluu (danluu.com/malloc-tutorial/). My implementation
- * is similar to theirs simply because I am a beginner and their code made
- * sense.
+ * and free based on a tutorial by danluu (danluu.com/malloc-tutorial/).
  */
 
- //TODO: realloc, merge chunk function, split chunk function
 
-  // finds free chunk with valid size and returns it 
-  //(also finds the last element of the list if a chunk can't be found)
-  // Does not split chunk to right size, so could allocate excess
-  // Should write a chunk split function
+ // finds free chunk with valid size and returns it 
+ //(also finds the last element of the list if a chunk can't be found)
+ // Does not split chunk to right size, so could allocate excess
+ // Should write a chunk split function
 chunk* find_freechunk(size_t size, chunk** last) {
     chunk* current = chunkListHead;
     while (current && !(current->free && current->size >= size)) {
